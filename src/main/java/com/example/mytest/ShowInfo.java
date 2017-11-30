@@ -151,12 +151,10 @@ public class ShowInfo extends Activity {
 	private String getTotalMemory(){
 		String path = "/proc/meminfo";
 		String str = "";
-		String[] arrayOfString = {"",""};
 		try {
 			FileReader localFileReader = new FileReader(path);
 			BufferedReader localBufferedReader = new BufferedReader(localFileReader,8192);
 			str = localBufferedReader.readLine();
-			arrayOfString = str.split("\\s+");
 			int start = str.indexOf(":");
 			int end = str.indexOf("B");
 			str =  str.substring(start+1,end+1).trim();
